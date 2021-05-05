@@ -1,0 +1,3 @@
+pivot table, chart -> only table list (1key-1value)
+chinh refresh data when open trong file template cho pivot table
+bi anh huong insert row

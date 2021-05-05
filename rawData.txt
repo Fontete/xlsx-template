@@ -1,0 +1,52 @@
+[
+   {
+     A: 'Tình trạng',     B: 'Giá trị',
+     C: 'Nội dung công việc',
+     D: 'Người phụ trách',
+     E: 'Mức độ ưu tiên',
+     F: 'Tình trạng'
+   },
+   {
+     A: 'Đã hoàn thành',
+     B: 0.15,
+     C: 'Phân tích giải pháp',
+     D: 'quanndm2',
+     E: '***',
+     F: 'Đã hoàn thành'
+   },
+   {
+     A: 'Đang tiến hành',
+     B: 0.28,
+     C: 'Thiết kê BE',
+     D: 'huyvn4',
+     E: '**',     F: 'Đang tiến hành'
+   },   {
+     A: 'Chưa thực hiện',
+     B: 0.57,     C: 'Thiết kế UI',     D: 'phutc2',
+     E: '**',     F: 'Đang tiến hành'   },
+   { A: '', B: '', C: 'FE', D: 'phutc2', E: '**', F: 'Chưa thực hiện' },
+   {
+     A: '',
+     B: '',
+     C: 'Thiết kế testcase',
+     D: 'huyvn4',
+     E: '**',
+     F: 'Chưa thực hiện'
+   },
+   {
+     A: '',
+     B: '',
+     C: 'Unit Test',
+     D: 'huyvn4',
+     E: '**',
+     F: 'Chưa thực hiện'
+   },
+   {
+     A: '',
+     B: '',
+     C: 'Báo cáo',
+     D: 'huyvn4, phutc2',
+     E: '*',
+     F: 'Chưa thực hiện'
+   }
+ ]
