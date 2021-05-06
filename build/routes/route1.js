@@ -15,76 +15,103 @@ var router1 = express_1.Router();
 exports.router1 = router1;
 // router1.get("/", func1);
 router1.post("/", function (req, res) {
-    var workbook = xlsx_1.default.readFile("./template.xlsx");
+    var workbook = xlsx_1.default.readFile("./rawDataDemo.xlsx");
     var sheet_name_list = workbook.SheetNames;
-    // let sheet = {};
-    // for (let i = 0; i < sheet_name_list.length; i++) {
-    //   sheet = workbook.Sheets[sheet_name_list[i]];
-    //   xlsx.utils.sheet_to_json(sheet, {
-    //     header: "A",
-    //     raw: true,
-    //     blankrows: false,
-    //     // defval: null,
-    //   });
-    // }
-    var sheet1 = workbook.Sheets[sheet_name_list[0]];
-    var sheet2 = workbook.Sheets[sheet_name_list[1]];
-    var sheet3 = workbook.Sheets[sheet_name_list[2]];
-    var sheet4 = workbook.Sheets[sheet_name_list[3]];
-    var sheet5 = workbook.Sheets[sheet_name_list[4]];
-    var sheet6 = workbook.Sheets[sheet_name_list[5]];
-    var sheet7 = workbook.Sheets[sheet_name_list[6]];
-    var sheet8 = workbook.Sheets[sheet_name_list[7]];
-    var sheet9 = workbook.Sheets[sheet_name_list[8]];
-    var sheet10 = workbook.Sheets[sheet_name_list[9]];
-    var rawData = xlsx_1.default.utils.sheet_to_json(sheet3, {
-        header: "A",
-        raw: true,
-        blankrows: false,
-        // defval: null,
-    });
-    var newData = [];
-    for (var i = 0; i < rawData.length; i++) {
-        if ((rawData[i].F && rawData[i].G) !== (null || undefined)) {
-            var obj = { F: rawData[i].F, G: rawData[i].G };
-            newData.push(obj);
-        }
+    var rawData = "rawData";
+    var values = {};
+    for (var i = 0; i < sheet_name_list.length; i++) {
+        rawData = rawData + (i + 1);
+        rawData = xlsx_1.default.utils.sheet_to_json(workbook.Sheets[sheet_name_list[i]], {
+            header: "A",
+            raw: true,
+            blankrows: false,
+            // defval:undefined
+        });
+        values[i] = rawData;
+        console.log(i, rawData, values);
     }
-    console.log(newData);
-    var rawData2 = xlsx_1.default.utils.sheet_to_json(sheet4, {
-        header: "A",
-        raw: true,
-        blankrows: false,
-        defval: null,
-    });
-    var rawData3 = xlsx_1.default.utils.sheet_to_json(sheet5, {
-        header: "A",
-        raw: true,
-        blankrows: false,
-        defval: null,
-    });
-    //console.log("raw", rawData);
-    fs_1.default.readFile(path_1.default.join(__dirname, "../../template.xlsx"), function (err, data) {
+    fs_1.default.readFile(path_1.default.join(__dirname, "../../templateDemo.xlsx"), function (err, data) {
         var template = new xlsx_template_1.default(data);
-        var sheetNumber = 2;
-        var values = {
-            rawData: rawData,
-            // newData,
-            // rawData2,
-            // rawData3,
-            // A: [
-            //   { A: "Đã hoàn thành" },
-            //   { A: "Đang tiến hành" },
-            //   { A: "Chưa thực hiện" },
-            // ],
-            // B: [{ B: 0.15 }, { B: 0.28 }, { B: 0.57 }],
-        };
-        console.log(values);
+        var sheetNumber = 1;
+        console.log("data", rawData);
         template.substitute(sheetNumber, values);
+        console.log(sheetNumber);
         var result = template.generate({ type: "nodebuffer" });
         res.attachment("generateFile.xlsx");
         // xlsx.read(result, { type: "buffer" }).SheetNames.forEach((s) => {});
         // console.log("result", xlsx.read(result, { typC: "buffer" }).Sheets);
         res.send(result);
     });
+    // const sheet1 = workbook.Sheets[sheet_name_list[0]];
+    // const sheet2 = workbook.Sheets[sheet_name_list[1]];
+    // const sheet3 = workbook.Sheets[sheet_name_list[2]];
+    // const sheet4 = workbook.Sheets[sheet_name_list[3]];
+    // const sheet5 = workbook.Sheets[sheet_name_list[4]];
+    // const sheet6 = workbook.Sheets[sheet_name_list[5]];
+    // const sheet7 = workbook.Sheets[sheet_name_list[6]];
+    // const sheet8 = workbook.Sheets[sheet_name_list[7]];
+    // const sheet9 = workbook.Sheets[sheet_name_list[8]];
+    // const sheet10 = workbook.Sheets[sheet_name_list[9]];
+    // const rawData = xlsx.utils.sheet_to_json(sheet3, {
+    // header: "A",
+    // raw: true,
+    // blankrows: false,
+    // // defval: null,
+    // });
+    // let newData: [] = [];
+    // for (let i = 0; i < rawData.length; i++) {
+    //   if ((rawData[i].F && rawData[i].G) !== (null || undefined)) {
+    //     const obj = { F: rawData[i].F, G: rawData[i].G };
+    //     newData.push(obj);
+    //   }
+    // }
+    // console.log(newData);
+    // const rawData2 = xlsx.utils.sheet_to_json(sheet4, {
+    //   header: "A",
+    //   raw: true,
+    //   blankrows: false,
+    //   defval: null,
+    // });
+    // const rawData3 = xlsx.utils.sheet_to_json(sheet5, {
+    //   header: "A",
+    //   raw: true,
+    //   blankrows: false,
+    //   defval: null,
+    // });
+    //console.log("raw", rawData);
+    // fs.readFile(path.join(__dirname, "../../template.xlsx"), (err, data) => {
+    //   const template: XlsxTemplate = new XlsxTemplate(data);
+    //   const sheetNumber: number = 2;
+    //   const values = {
+    //     // rawData,
+    //     // newData,
+    //     // rawData2,
+    //     // rawData3,
+    //     // A: [
+    //     //   { A: "Đã hoàn thành" },
+    //     //   { A: "Đang tiến hành" },
+    //     //   { A: "Chưa thực hiện" },
+    //     // ],
+    //     // B: [{ B: 0.15 }, { B: 0.28 }, { B: 0.57 }],
+    //     A: [
+    //       { A: "Đã hoàn thành" },
+    //       { A: "Đang tiến hành" },
+    //       { A: "Chưa thực hiện" },
+    //       { A: "" },
+    //       { A: "" },
+    //       { A: "" },
+    //       { A: "" },
+    //     ],
+    //     D: [new Date("2013-06-01"), new Date("2013-06-01")],
+    //     C: "Good Job Man",
+    //   };
+    //   // console.log(values);
+    //   // console.log(typeof new Date("26-03-1999"));
+    // template.substitute(sheetNumber, values);
+    // const result = template.generate({ type: "nodebuffer" });
+    // res.attachment("generateFile.xlsx");
+    // // xlsx.read(result, { type: "buffer" }).SheetNames.forEach((s) => {});
+    // // console.log("result", xlsx.read(result, { typC: "buffer" }).Sheets);
+    // res.send(result);
+    // });
 });

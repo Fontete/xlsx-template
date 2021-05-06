@@ -1,0 +1,103 @@
+[
+   {
+     A: 1,
+     B: 'Bố trí phương tiện, lái xe NVPV \r\nkhông đảm bảo đúng quy định',
+     D: 2000000,
+     E: 2000000,
+     F: 'Lần 1',
+     H: 5,
+     I: 10000
+   },
+   {     D: 2000000,
+     E: 2000000,
+     F: 'Lần 2',     G: 'Báo cáo Sở GTVT \r\nthu hồi phù hiệu'
+   },
+   {
+     A: 2,
+     B: 'Xe hoạt động trên tuyến lạng lách, giành khách',
+     D: 200000,
+     E: 200000,
+     F: 'Lần 1',
+     G: 'ĐÌnh chỉ cá nhân 3 ngày'
+   },
+   { D: 300000, E: 300000, F: 'Lần 2', G: 'Đình chỉ cá nhân 5 ngày' },
+   { D: 400000, E: 400000, F: 'Lần 3', G: 'ĐÌnh chỉ cá nhân 10 ngày' },
+   {
+     A: 3,
+     B: 'Giao tay lái cho người khác không có trong \r\nlệnh vận chuyển',
+     D: 200000,
+     E: 200000,
+     F: 'Lần 1'
+   },
+   { D: 300000, E: 300000, F: 'Lần 2' },
+   { D: 400000, E: 400000, F: 'Lần 3' },
+   {
+     A: 4,
+     B: 'Lái xe, NVPV không có hoặc không mang \r\ntheo giấy tờ theo quy định',
+     D: 500000,
+     E: 500000,
+     G: 'Đình chỉ phương tiện, LX, NVPV,...'
+   },
+   {
+     A: 5,
+     B: 'Lái xe, NVPV không có hoặc không mang \r\ntheo giấy chứng nhận tập huấn',
+     D: 200000,
+     E: 200000,
+     H: 22,
+     I: 4400
+   },
+   {
+     A: 6,
+     B: 'Không dừng hẳn khi đón, trả khách',
+     D: 300000,
+     E: 300000,
+     F: 'Lần 1',
+     G: 'ĐÌnh chỉ cá nhân 3 ngày'
+   },
+   { D: 400000, E: 300000, F: 'Lần 2', G: 'Đình chỉ cá nhân 5 ngày' },
+   { D: 500000, E: 500000, F: 'Lần 3', G: 'ĐÌnh chỉ cá nhân 10 ngày' },
+   {
+     A: 7,
+     B: 'Dừng đón, trả khách không đúng nơi quy \r\nđịnh, gây mất 
+ATGT',
+     D: 300000,
+     E: 200000,
+     F: 'Lần 1'
+   },
+   { D: 400000, E: 300000, F: 'Lần 2' },
+   { D: 500000, E: 400000, F: 'Lần 3' },
+   {
+     A: 8,
+     B: 'Xe trang bị và sử dụng còi\r\n không đúng quy định',     
+     D: 200000,
+     E: 200000,
+     F: 'Lần 1',
+     G: 'Đình chỉ phương tiện đến khi \r\ntrang bị đầy đủ'        
+   },
+   { D: 300000, E: 300000, F: 'Lần 2' },
+   {
+     A: 9,
+     B: 'Không trang bị bình chữa cháy, dụng cụ \r\nthoát hiểm theo quy định',
+     D: 200000,
+     E: 200000,
+     F: 'Lần 1',
+     G: 'Đình chỉ phương tiện đến khi \r\ntrang bị đầy đủ',       
+     H: 2,
+     I: 400
+   },
+   { D: 300000, E: 300000, F: 'Lần 2' },
+   {
+     A: 10,
+     B: 'Lái xe, NVPV sử dụng rượu bia hoặc có nồng độ cồn khi đang làm nhiệm vụ',
+     D: 1000000,
+     E: 1000000,
+     F: 'Lần 1',
+     G: 'ĐÌnh chỉ ngay lái xe,NVPV và \r\nđề nghị đơn vị bố trí thay thế'
+   },
+   {
+     D: 1000000,
+     E: 1000000,
+     F: 'Lần 2',
+     G: 'Đình chỉ vô thời hạn đối với LX, NVPT'
+   }
+ ]
